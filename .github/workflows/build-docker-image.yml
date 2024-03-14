@@ -1,12 +1,6 @@
 name: build-docker-image
 
-on:
-  push:
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
-
-env:
-  REPOSITORY: amneziawg-backend
+on: workflow_dispatch
 
 jobs:
   build:
@@ -26,7 +20,7 @@ jobs:
         id: metadata
         uses: docker/metadata-action@v5
         with:
-          images: amneziavpn/${{ env.REPOSITORY }}
+          images: alexandergalkov/test
           tags: type=semver,pattern={{version}}
 
       - name: Set up Docker Buildx

@@ -34,4 +34,5 @@ jobs:
         with:
           context: .
           tags: ${{ steps.metadata.outputs.tags }}
+          annotations: ${{ steps.metadata.outputs.annotations }}
           push: true

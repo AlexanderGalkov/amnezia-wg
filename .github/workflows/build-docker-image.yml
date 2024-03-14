@@ -25,6 +25,8 @@ jobs:
         with:
           images: alexandergalkov/test
           tags: type=semver,pattern={{version}}
+        env:
+          DOCKER_METADATA_ANNOTATIONS_LEVELS: manifest,index
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
